@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+\$to = "${1:gezeac@gmail.com}";
+\$subject = "${2:Consulta desde la web}";
+\$headers = "MIME-Version: 1.0" . "\r\n";
+\$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+//\$headers .= 'From: <desde@ejemplo.com>' . "\r\n";
+//\$headers .= 'Cc: copia@ejemplo.com' . "\r\n";
+\$message = "";
+foreach (\$_POST as \$key => \$value) {
+    \$message .= "<b>".\$key."</b>: ".\$value."<br>";
+}
+
+mail(\$to,\$subject,\$message,\$headers);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mail</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

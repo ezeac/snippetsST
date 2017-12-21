@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+//Importar componentes
+import { HomeComponent } from './home/home.component';
+import { ${1:ComponenteDePrueba}Component } from './${1:ComponenteDePrueba}/${2:componenteDePrueba}.component';
+
+//Crear rutas
+const appRoutes: Routes = [
+	{path: '', component:HomeComponent},
+	{path: 'home/:page', component:HomeComponent},
+	{path: '**', component:HomeComponent},
+	{path: '${3:rutaDePrueba}', component:${1:ComponenteDePrueba}Component}
+];
+
+//Se crea el nav html de esta forma: <a [routerLink]="['/${3:rutaDePrueba}']" [routerLinkActive]="['claseLinkActivo']"></a> <router-outlet></router-outlet>	
+//Agregar routing en imports y appRoutingProviders en providers para "modules"
+export const appRoutingProviders: any[] = [];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>routing</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

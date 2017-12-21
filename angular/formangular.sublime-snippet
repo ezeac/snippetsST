@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+	<label for="nombre">NOMBRE Y APELLIDO</label>
+	<input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="nombreForm" required pattern="[a-z]+" placeholder="Ingrese su nombre y apellido">
+	<span *ngIf="nombre.touched && !nombre.valid">Formato de nombre incorrecto</span>
+
+	<label for="dni">DNI</label>
+	<input type="text" name="dni" #dni="ngModel" [(ngModel)]="dniForm" required pattern="[0-9]+" placeholder="Ingrese su dni">
+	<span *ngIf="dni.touched && !dni.valid">Formato de dni incorrecto</span>
+
+	<label for="email">E-MAIL</label>
+	<input type="text" name="email" #email="ngModel" [(ngModel)]="emailForm" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\$" placeholder="Ingrese su e-mail">
+	<span *ngIf="email.touched && !email.valid">Formato de email incorrecto</span>
+
+	<label for="mensaje">MENSAJE</label>
+	<textarea name="mensaje" #mensaje="ngModel" [(ngModel)]="mensajeForm" placeholder="Escriba su consulta"></textarea>
+	<span *ngIf="mensaje.touched && !mensaje.valid">Formato de email incorrecto</span>
+</form>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>formangular</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

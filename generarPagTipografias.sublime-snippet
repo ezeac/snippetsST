@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+//CREAR CARPETA ${1:fonts} EN EL MISMO LUGAR DONDE ESTÁ ESTE SCRIPT Y EJECUTARLO EN PHP
+function listar_directorios_ruta(\$ruta){ 
+   // crear archivo css a escribir 
+   \$arch = fopen("tipografias.css", "w");
+   // abrir un directorio y listarlo recursivo 
+   if (is_dir(\$ruta)) { 
+      if (\$dh = opendir(\$ruta)) { 
+         while ((\$file = readdir(\$dh)) !== false) { 
+						if (is_dir(\$ruta . \$file) == FALSE && \$file!="." && \$file!=".."){
+							\$fileCortado = substr(\$file, 0, -4);
+							echo "@font-face {<br>font-family: \$fileCortado;<br>src: url(\$ruta\$file);<br>}<br><br>"; 
+							fwrite(\$arch, "@font-face {" . PHP_EOL);
+							fwrite(\$arch, "font-family: \$fileCortado;" . PHP_EOL);
+							fwrite(\$arch, "src: url(\$ruta\$file);" . PHP_EOL);
+							fwrite(\$arch, "}" . PHP_EOL);
+							fwrite(\$arch, "" . PHP_EOL);
+						}
+         } 
+      closedir(\$dh); 
+      } 
+	fclose(\$arch);
+   }else 
+      echo "<br>No es ruta valida"; 
+}
+
+listar_directorios_ruta("./${1:fonts}/");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>generarPagTipografias</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

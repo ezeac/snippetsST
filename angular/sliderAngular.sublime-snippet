@@ -1,0 +1,79 @@
+<snippet>
+	<content><![CDATA[
+	<!-- HTML -->
+		<div class="slider" id="sliderHome">
+			<div class="col-xs-1">
+				<div class="prev" style="cursor: pointer" (click)="moverSlider(${1:nombreSlide}Actual-1)"><span class="glyphicon glyphicon-menu-left"></span></div>
+			</div>
+			<div class="sliderMarco col-xs-10">
+				<div class="sliderContainer">
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/1.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/2.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/3.gif') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/4.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/5.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/6.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/7.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/8.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/9.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/10.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/11.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/12.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/13.jpg') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/14.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/15.png') no-repeat"></div>
+					<div class="sliderItem col-xs-12 col-sm-4" style="background: url('../assets/img/home/slider2/16.svg') no-repeat"></div>
+				</div>
+			</div>
+			<div class="col-xs-1">
+				<div class="next" style="cursor: pointer" (click)="moverSlider(${1:nombreSlide}Actual+1)"><span class="glyphicon glyphicon-menu-right"></span></div>
+			</div>
+		</div>
+	<!-- FIN HTML -->
+	<!-- COMPONENT -->
+		declare var TweenMax:any;
+		declare var Power4:any;
+
+		public ${1:nombreSlide}Slides = [{margin: 0}];
+		public ${1:nombreSlide}Actual = 0;
+
+		incializarSlider${1:nombreSlide}() {
+			var totalItems = \$("#sliderHome .sliderItem").length;
+			var itemPorPantalla = 3;
+			if (\$(window).width() < 768) {
+				itemPorPantalla = 1;
+			}
+			var widthCoeficiente = totalItems / itemPorPantalla;
+			var widthActual = \$("#sliderHome .sliderContainer").outerWidth();
+			\$("#sliderHome .sliderContainer").width(widthActual * widthCoeficiente);
+			\$("#sliderHome .sliderItem").each(function(index, element){
+				\$(element).outerWidth(widthActual / itemPorPantalla);
+			});
+
+			this.${1:nombreSlide}Slides = [];
+			for (var i = 0; i < widthCoeficiente; ++i) {
+				if (i+1 > widthCoeficiente) {
+					this.${1:nombreSlide}Slides.push({margin: -(widthCoeficiente-1)*widthActual});
+				} else {
+					this.${1:nombreSlide}Slides.push({margin: -i*widthActual});
+				}
+			}
+		}
+
+		moverSlider(posicion) {
+			if (posicion == -1) {
+				posicion = this.${1:nombreSlide}Slides.length-1;
+			} else if (posicion == this.${1:nombreSlide}Slides.length) {
+				posicion = 0;
+			}
+			new TweenMax.to(\$("#sliderHome .sliderContainer"), 3, {marginLeft: this.${1:nombreSlide}Slides[posicion].margin, ease: Power4.easeOut});
+			this.${1:nombreSlide}Actual = posicion;
+			console.log(this.${1:nombreSlide}Actual);
+		}
+	<!-- FIN COMPONENT -->
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sliderAngular</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,46 @@
+<snippet>
+	<content><![CDATA[
+import { Component, Input } from "@angular/core";
+import { ${1:NombreServicio}Service } from '../services/${2:nombreServicio}.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+declare var jquery:any;
+declare var \$:any;
+
+@Component({
+	selector: "${3:nombreComponente}",
+	templateUrl: "./${3:nombreComponente}.component.html",
+	// styleUrls: ['./style.css'],
+	providers: [${1:NombreServicio}Service]
+})
+
+
+export class ${4:NombreComponente}Component{
+	public titulo = "Página ${3:nombreComponente}";
+	public parametro;
+	//Luego se llama al parametro1 desde el html: <${3:nombreComponente} [parametro1]="valor"></${3:nombreComponente}>
+	@Input() parametro1:string;
+
+	constructor(
+		private ${2:nombreServicio}Service:${1:NombreServicio}Service,
+		private _route: ActivatedRoute,
+		private _router: Router
+	){}
+
+	ngOnInit(){
+		this._route.params.forEach((params: Params) =>{
+			this.parametro = params['page'];
+		})
+	}
+
+	redirigir(){
+		this._router.navigate(['/${3:nombreComponente}','valorPage']);
+	}
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>component</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

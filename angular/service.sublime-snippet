@@ -1,0 +1,54 @@
+<snippet>
+	<content><![CDATA[
+import { Injectable } from '@angular/core';
+import {Http, Response, Headers} from '@angular/http';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
+
+declare var jquery:any;
+declare var $:any;
+
+@Injectable()
+export class ${1:NombreServicio}Service{
+	public url: string;
+	public respuesta: any;
+
+	constructor(private _http:Http){}
+
+	get(id){
+		this.url = "http://www.soyunaURL.com.ar/index.php?peticion=301&nrodoc=" + dni + "&fechaNac='01/01/0001'&rnos=101604";
+		var respuesta;
+		$.ajax({
+			url: this.url, 
+			async: false,
+			error: function(xhr){
+				respuesta = "Ocurrió un error: " + xhr.status + " " + xhr.statusText;
+		    },
+		    success: function(result){
+		        respuesta = result;
+		    },
+		    dataType: "xml"
+		});
+		return respuesta;
+	}
+
+	post(id, name){
+		this.url = "https://api.trello.com/1/cards";
+		const req = this._http.post(this.url, {
+			idList : id,
+			name : name,
+			key : "b1691298dac8eacbce129b3672ae023c",
+			token : "5e61f4f5f7f2c22c1d08c6a9fa10a0bf31bdd9d7338aa4c90359e5517334748e"
+		}).subscribe(
+			result => {this.respuesta = result},
+			error => {this.respuesta = "Error occured"}
+		);
+		return this.respuesta;
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>service</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

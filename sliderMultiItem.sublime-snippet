@@ -1,0 +1,81 @@
+<snippet>
+	<content><![CDATA[
+<!-- HTML -->
+<div class="slider" id="${1:nombreSlide}">
+	<div class="col-xs-1">
+		<div class="${1:nombreSlide}Prev" style="cursor: pointer" onClick="moverSlider${1:nombreSlide}(event)"><span class="glyphicon glyphicon-menu-left"></span></div>
+	</div>
+	<div class="${1:nombreSlide}Marco col-xs-10" style="overflow: hidden">
+		<div class="${1:nombreSlide}Container">
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_04.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_05.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_06.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_07.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_08.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_09.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_10.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_11.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_12.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_13.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_14.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_15.jpg"></div>
+			<div class="${1:nombreSlide}Item col-xs-12 col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() ?>/imagenes/home/slider${1:nombreSlide}/slide${1:nombreSlide}_16.jpg"></div>
+		</div>
+	</div>
+	<div class="col-xs-1">
+		<div class="${1:nombreSlide}Next" style="cursor: pointer" onClick="moverSlider${1:nombreSlide}(event)"><span class="glyphicon glyphicon-menu-right"></span></div>
+	</div>
+	<div id="${1:nombreSlide}ItemActual" data-to=0></div>
+</div>
+<!-- FIN HTML -->
+<script>
+	var ${1:nombreSlide}Slides = [{margin: 0}];
+	incializarSlider${1:nombreSlide}();
+	function incializarSlider${1:nombreSlide}() {
+		var totalItems = \$("#${1:nombreSlide} .${1:nombreSlide}Item").length;
+		var itemPorPantalla = 3;
+		if (\$(window).width() < 768) {
+			itemPorPantalla = 1;
+		}
+		var widthCoeficiente = totalItems / itemPorPantalla;
+		var widthActual = \$("#${1:nombreSlide} .${1:nombreSlide}Container").outerWidth();
+		\$("#${1:nombreSlide} .${1:nombreSlide}Container").width(widthActual * widthCoeficiente);
+		\$("#${1:nombreSlide} .${1:nombreSlide}Item").each(function(index, element){
+			\$(element).outerWidth(widthActual / itemPorPantalla);
+		});
+
+		${1:nombreSlide}Slides = [];
+		for (var i = 0; i < widthCoeficiente; ++i) {
+			if (i+1 > widthCoeficiente) {
+				${1:nombreSlide}Slides.push({margin: -(widthCoeficiente-1)*widthActual});
+			} else {
+				${1:nombreSlide}Slides.push({margin: -i*widthActual});
+			}
+		}
+	}
+
+	function moverSlider${1:nombreSlide}(e) {
+		e.preventDefault();
+		posicion = \$("#${1:nombreSlide}ItemActual").data("to");
+		if (\$(e.srcElement).parent().hasClass("${1:nombreSlide}Next")){
+			posicion++;
+		} else {
+			posicion--;
+		}
+		if (posicion == -1) {
+			posicion = ${1:nombreSlide}Slides.length-1;
+		} else if (posicion == ${1:nombreSlide}Slides.length) {
+			posicion = 0;
+		}
+		new TweenMax.to(\$("#${1:nombreSlide} .${1:nombreSlide}Container"), 3, {marginLeft: ${1:nombreSlide}Slides[posicion].margin, ease: Power4.easeOut});
+		\$("#${1:nombreSlide}ItemActual").data("to", posicion);
+
+		console.log(posicion);
+	}
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sliderMultiItemr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+<!-- INCLUDE SCROLLMAGIC + GSAP -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<!-- FIN INCLUDE -->
+
+		
+// CREANDO ANIMACIÓN
+var slideIndex = 0;
+cambiarSlide();
+
+function cambiarSlide() {
+	\$(".imagenSlider").each(function(index, element){
+		if ((index == slideIndex-1) || (slideIndex == 0 && index == \$(".imagenSlider").length-1)) {
+			new TweenMax.fromTo(element, 3, {opacity:1, scale: 1}, {opacity: 0, scale: 1.05, ease: Power4.easeOut});
+		} else if (slideIndex == index) {
+			new TweenMax.fromTo(element, 3, {opacity: 0, scale: 1.05}, {opacity: 1, scale: 1, ease: Power4.easeOut});
+		} else {
+			\$(element).css({"opacity":"0"});
+		}
+	})
+	slideIndex++;
+	if (slideIndex >= \$(".imagenSlider").length) {
+		slideIndex = 0;
+	} 
+	setTimeout(cambiarSlide, 4000);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sliderAuto</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

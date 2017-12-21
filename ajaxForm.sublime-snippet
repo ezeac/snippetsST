@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+//CONSULTA AJAX
+\$("${1:form}").submit(function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	\$.ajax({
+		url: "${2:enviarForm.php}", 
+		data: \$("${1:form}").serialize(),
+	    error: function(xhr){
+	        console.log("Ocurrió un error: " + xhr.status + " " + xhr.statusText);
+	    },
+		success: function(result){
+	        ${3:var respuesta = result;
+	        \$("#modal").html(respuesta.message);
+	        \$("#modal").fadeIn();
+	        setTimeout(function(){
+	        	\$("#modal").fadeOut();
+	        \},3000);}
+	    },
+	    dataType: "${4:json}"
+	});
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ajaxform</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+<!-- INCLUDE SCROLLMAGIC + GSAP -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<!-- FIN INCLUDE -->
+
+//INICIALIZAR CONTROLLER
+var scrollMagicController = new ScrollMagic.Controller();
+    
+var i = 0;
+var offsetAnterior = 0;
+\$(".${1:claseAnimada}").each(function(index,element){
+    var offset = \$(element).offset().top;
+    if (offsetAnterior == offset) {
+        i += 0.2;
+    } else {
+        i = 0;
+    }
+    offsetAnterior = \$(element).offset().top;
+    // CREANDO ANIMACIÓN
+    var ${2:nombreAnimacion} = new TweenMax.fromTo(element, 0.5, {opacity:0, y:50},{y: 0, opacity: 1, delay: i});
+    //ASIGNANDO TRIGGERS
+    var scene${2:nombreAnimacion} = new ScrollMagic.Scene({triggerElement: element, offset: -250, duration: 400}).setTween(${2:nombreAnimacion}).addTo(scrollMagicController).addIndicators();
+})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>animation</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
