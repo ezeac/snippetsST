@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+<?php echo \$this->getLayout()->createBlock('cms/block')->setBlockId('${1:block_id}')->toHtml(); ?>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>blockCall</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
