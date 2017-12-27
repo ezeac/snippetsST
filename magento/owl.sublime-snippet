@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+jQuery(function(\$){
+    \$(".marcasCont").owlCarousel({
+        loop:true,
+	    margin:10,
+		mouseDrag: true,
+		touchDrag: true,
+		items : 7, //10 items above 1000px browser width
+		itemsTablet: [768,2], //2 items between 600 and 0
+		itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+    });
+});
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>owl</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
