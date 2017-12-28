@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+<img src="<?php echo Mage::getBaseUrl('media') ?>wysiwyg/${1:nombreDeImagen.png}" alt="" />${2:<img src="\{\{media url="wysiwyg/${1:nombreDeImagen.png}"\}\}" alt="" />}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mediaCall</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
