@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+<option *ngFor="let item of arrayDeItems; let i = index" value="{{item[0]}}">{{item[1]}}</option>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ngFor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

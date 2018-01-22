@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
 	<!-- HTML -->
-		<div class="slider" id="sliderHome">
+		<div class="slider" id="${1:nombreSlide}">
 			<div class="col-xs-1">
 				<div class="prev" style="cursor: pointer" (click)="moverSlider(${1:nombreSlide}Actual-1)"><span class="glyphicon glyphicon-menu-left"></span></div>
 			</div>
@@ -29,6 +29,22 @@
 				<div class="next" style="cursor: pointer" (click)="moverSlider(${1:nombreSlide}Actual+1)"><span class="glyphicon glyphicon-menu-right"></span></div>
 			</div>
 		</div>
+		<style>
+			#${1:nombreSlide} .slider .sliderItem {
+				height: 200px;
+				float: left;
+			}
+
+			#${1:nombreSlide} .sliderContainer {
+				float: left;
+				width: 100%;
+			    transition: margin-left 1s ease;
+			}
+			#${1:nombreSlide} .sliderMarco {
+				overflow: hidden;
+				padding: 0px;
+			}
+		</style>
 	<!-- FIN HTML -->
 	<!-- COMPONENT -->
 		declare var TweenMax:any;
@@ -38,15 +54,15 @@
 		public ${1:nombreSlide}Actual = 0;
 
 		incializarSlider${1:nombreSlide}() {
-			var totalItems = \$("#sliderHome .sliderItem").length;
+			var totalItems = \$("#${1:nombreSlide} .sliderItem").length;
 			var itemPorPantalla = 3;
 			if (\$(window).width() < 768) {
 				itemPorPantalla = 1;
 			}
 			var widthCoeficiente = totalItems / itemPorPantalla;
-			var widthActual = \$("#sliderHome .sliderContainer").outerWidth();
-			\$("#sliderHome .sliderContainer").width(widthActual * widthCoeficiente);
-			\$("#sliderHome .sliderItem").each(function(index, element){
+			var widthActual = \$("#${1:nombreSlide} .sliderContainer").outerWidth();
+			\$("#${1:nombreSlide} .sliderContainer").width(widthActual * widthCoeficiente);
+			\$("#${1:nombreSlide} .sliderItem").each(function(index, element){
 				\$(element).outerWidth(widthActual / itemPorPantalla);
 			});
 
@@ -66,7 +82,8 @@
 			} else if (posicion == this.${1:nombreSlide}Slides.length) {
 				posicion = 0;
 			}
-			new TweenMax.to(\$("#sliderHome .sliderContainer"), 3, {marginLeft: this.${1:nombreSlide}Slides[posicion].margin, ease: Power4.easeOut});
+			//new TweenMax.to(\$("#${1:nombreSlide} .sliderContainer"), 3, {marginLeft: this.${1:nombreSlide}Slides[posicion].margin, ease: Power4.easeOut});
+			$("#${1:nombreSlide} .sliderContainer").css({"marginLeft":this.${1:nombreSlide}Slides[posicion].margin})
 			this.${1:nombreSlide}Actual = posicion;
 			console.log(this.${1:nombreSlide}Actual);
 		}

@@ -12,7 +12,13 @@ const appRoutes: Routes = [
 	{path: '', component:HomeComponent},
 	{path: 'home/:page', component:HomeComponent},
 	{path: '**', component:HomeComponent},
-	{path: '${3:rutaDePrueba}', component:${1:ComponenteDePrueba}Component}
+	{path: '${3:rutaDePrueba}', component:${1:ComponenteDePrueba}Component,
+		children: [
+			{ path: '', redirectTo: 'overview', pathMatch: 'full' },
+			{ path: 'overview', component: Overview },
+			{ path: 'specs', component: Specs }
+		]
+	}
 ];
 
 //Se crea el nav html de esta forma: <a [routerLink]="['/${3:rutaDePrueba}']" [routerLinkActive]="['claseLinkActivo']"></a> <router-outlet></router-outlet>	
