@@ -32,6 +32,18 @@ export class ${1:NombreServicio}Service{
 		return respuesta;
 	}
 
+	get_integrantes(){
+		this.url = "http://ciqabackend.diezweb.com.ar/wp-json/wp/v2/integrantes?fields=id,nombre_completo,cargo,email,telefono,foto.guid,es_investigador,contenido_investigador";
+		this.respuesta = this._http.get(this.url).map(res => res.json());
+		return this.respuesta;
+	}
+	//	luego se llama en el component.ts de la siguiente forma:
+	//	this.peticionesService.get_integrantes().subscribe(
+	//		data => this.integrantes = data, 
+	//		(err) => console.log(err), 
+	//		() => setTimeout(()=>{//función callback},100)
+	//	);
+
 	post(id, name){
 		this.url = "https://api.trello.com/1/cards";
 		const req = this._http.post(this.url, {
