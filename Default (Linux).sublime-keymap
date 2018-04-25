@@ -1,0 +1,20 @@
+[
+	{ "keys": ["alt+minus"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["alt+shift+minus"], "command": "toggle_comment", "args": { "block": true } },
+	// Convert to Compact Format (Break Selectors)
+	{
+		"keys": ["alt+l"],
+		"command": "css_format",
+		"args": {
+			"action": "compact-bs"
+		}
+	},
+	// Convert to Expanded Format
+	{
+		"keys": ["alt+shift+l"],
+		"command": "css_format",
+		"args": {
+			"action": "expand"
+		}
+	},
+]
