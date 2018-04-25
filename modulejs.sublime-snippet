@@ -1,26 +1,33 @@
 <snippet>
 	<content><![CDATA[
-// Namespace for the library
-var MyLibrary = {};
+// Modulo1 CORE
+(function (){
+	jQuery.modulo1 = function (options){
+		var _settings = $.extend({
+			animated: true, // activar animación para abrir/cerrar pop-up (true | false)
+		},options);
 
-// Library definition
-MyLibrary = (function () {
-	// Private variables / properties
-	var p1, p2;
-
-	// Private methods
-	function aPrivateMethod() {
-	}
-
-	// Public API
-	return {
-		publicMethod: function () {
-		},
-
-		anotherPublicMethod () {
-		}
+		var _module = {
+			_info_container: "precio-en-cuotas",
+			_modal_container: "payment-method-source",
+			init: function() {
+				if(_settings.animated) { _module.otra_func() }
+				if (options == undefined) { return "todo ok" } 
+				else { return options }
+			},
+			otra_func: function() {
+				console.log("ejecuta otra func.");
+			}
+		};
+		return _module.init();
 	}
 }());
+
+// Inicializamos Modulo1;
+$(document).ready(function(){
+	$.modulo1();
+});
+
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>modulejs</tabTrigger>
