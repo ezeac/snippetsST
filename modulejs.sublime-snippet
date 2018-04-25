@@ -3,7 +3,7 @@
 // Modulo1 CORE
 (function (){
 	jQuery.modulo1 = function (options){
-		var _settings = $.extend({
+		var _settings = \$.extend({
 			animated: true, // activar animación para abrir/cerrar pop-up (true | false)
 		},options);
 
@@ -23,9 +23,9 @@
 	}
 }());
 
-// Inicializamos Modulo1;
-$(document).ready(function(){
-	$.modulo1();
+// Inicializamos Modulo1
+\$(document).ready(function(){
+	\$.modulo1();
 });
 
 ]]></content>
