@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"CSS Format",
+		"Emmet",
 		"Package Control",
 		"TypeScript Syntax"
 	]
