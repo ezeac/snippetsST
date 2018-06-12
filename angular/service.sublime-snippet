@@ -41,7 +41,7 @@ export class PeticionesService{
 	//	this.peticionesService.get_integrantes().subscribe(
 	//		data => this.integrantes = data, 
 	//		(err) => console.log(err), 
-	//		() => setTimeout(()=>{//función callback},100)
+	//		(complete) => {console.log(this.integrantes);}
 	//	);
 
 	post(id, name){
