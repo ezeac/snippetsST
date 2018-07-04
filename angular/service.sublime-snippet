@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 declare var jquery:any;
-declare var $:any;
+declare var \$:any;
 
 @Injectable()
 export class PeticionesService{
@@ -18,7 +18,7 @@ export class PeticionesService{
 	get(id){
 		this.url = "http://www.soyunaURL.com.ar/index.php?peticion=301&nrodoc=" + id + "&fechaNac='01/01/0001'&rnos=101604";
 		var respuesta;
-		$.ajax({
+		\$.ajax({
 			url: this.url, 
 			async: false,
 			error: function(xhr){
