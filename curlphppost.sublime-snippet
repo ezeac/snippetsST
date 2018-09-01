@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+	\$data["price"] = \$price;
+    \$data["stock"] = \$stock;
+
+    \$curl = curl_init();
+    curl_setopt_array(\$curl, array(
+        CURLOPT_URL => "https://api.tiendanube.com/v1/808724/products/".\$id."/variants/".\$id_sku,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 120,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "PUT",
+        CURLOPT_POSTFIELDS => json_encode(\$data), 
+        CURLOPT_HTTPHEADER => array(
+            "Authentication: bearer f65d278761a83bdf2e5887200f51f6373030ee39 ",
+            "User-Agent: App ERP-TiendaNube (ezequielcrosa@diezweb.com.ar)",
+            "Content-Type: application/json"
+        ),
+    ));
+
+    \$response = curl_exec(\$curl);
+	\$err = curl_error(\$curl);
+
+	curl_close(\$curl);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>curlphppost</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
