@@ -7,9 +7,14 @@
 	[
 		"CSS Format",
 		"Emmet",
+<<<<<<< HEAD
 		"HTML-CSS-JS Prettify",
 		"Increment Selection",
 		"Monokai++",
+=======
+		"JSON Reindent",
+		"JSONLint",
+>>>>>>> fd07c69f32717828b91bae4bca9ad92869563266
 		"Package Control",
 		"PackageResourceViewer",
 		"Pretty JSON",
