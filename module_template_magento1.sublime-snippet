@@ -1,0 +1,74 @@
+<snippet>
+	<content><![CDATA[
+
+vim app/etc/modules/${1:Namespace}_${2:Name}.xml;
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <${1:Namespace}_${2:Name}>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Page />
+            </depends>
+        </${1:Namespace}_${2:Name}>
+    </modules>
+</config>
+
+mkdir -p "app/code/local/${1:Namespace}/${2:Name}/etc";
+vim app/code/local/${1:Namespace}/${2:Name}/etc/config.xml;
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <${1:Namespace}_${2:Name}>
+            <version>0.0.1</version>
+        </${1:Namespace}_${2:Name}>
+    </modules>
+    <global>
+        <page>
+            <layouts>
+                <${5:custom_template} module="page" translate="label">
+                    <label>Custom layout</label>
+                    <template>page/${5:custom_template}.phtml</template>
+                    <layout_handle>${5:custom_template}</layout_handle>
+                </${5:custom_template}>
+            </layouts>
+        </page>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <${3:namespace}_${4:name}>
+                    <file>${3:namespace}_${4:name}.xml</file>
+                </${3:namespace}_${4:name}>
+            </updates>
+        </layout>
+    </frontend>
+</config>
+
+vim app/design/frontend/base/default/layout/${3:namespace}_${4:name}.xml;
+<?xml version="1.0"?>
+<layout>
+    <${5:custom_template} translate="label">
+        <label>Custom layout</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/${5:custom_template}.phtml</template></action>
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </${5:custom_template}>
+</layout>
+
+mkdir -p "app/design/frontend/base/default/template/page";
+vim app/design/frontend/base/default/template/page/${5:custom_template}.phtml;
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo \$this->getLang() ?>" lang="<?php echo \$this->getLang() ?>">
+
+</html>
+
+
+{{block type="core/template" template="page/${5:custom_template}.phtml"}}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>module_template_magento1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>module_template_magento1</scope> -->
+</snippet>
