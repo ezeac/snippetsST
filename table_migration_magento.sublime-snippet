@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+update core_config_data set value = "http://pigmentostg.versionesweb.com/" where path like "%base_url%";
+update sales_order set customer_email = replace(customer_email , "@", "@testk");
+update customer_entity set email = replace(email, "@", "@testk");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>table_migration_magento</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

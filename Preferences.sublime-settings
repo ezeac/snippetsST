@@ -3,6 +3,7 @@
 	"font_size": 10,
 	"ignored_packages":
 	[
+		"Theme - Monokai Pro",
 		"Vintage"
 	],
 	"show_encoding": true,
