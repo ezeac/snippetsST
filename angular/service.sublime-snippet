@@ -8,7 +8,10 @@ import { map, take } from 'rxjs/operators';
 declare var jquery:any;
 declare var \$:any;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class PeticionesService{
 	public url: string;
 	public respuesta: any;
