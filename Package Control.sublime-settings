@@ -7,7 +7,9 @@
 	[
 		"CSS Format",
 		"Emmet",
+		"HTML-CSS-JS Prettify",
 		"Package Control",
-		"PackageResourceViewer"
+		"PackageResourceViewer",
+		"Pretty JSON"
 	]
 }

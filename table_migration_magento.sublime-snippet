@@ -1,7 +1,8 @@
 <snippet>
 	<content><![CDATA[
-update core_config_data set value = "http://pigmentostg.versionesweb.com/" where path like "%base_url%";
+update core_config_data set value = "http://dev.nhautopiezas.com.ar/" where path like "%base_url%";
 update sales_order set customer_email = replace(customer_email , "@", "@testk");
+update sales_flat_order set customer_email = replace(customer_email , "@", "@testk");
 update customer_entity set email = replace(email, "@", "@testk");
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
