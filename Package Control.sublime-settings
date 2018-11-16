@@ -8,8 +8,10 @@
 		"CSS Format",
 		"Emmet",
 		"HTML-CSS-JS Prettify",
+		"LESS",
 		"Package Control",
 		"PackageResourceViewer",
-		"Pretty JSON"
+		"Pretty JSON",
+		"TypeScript"
 	]
 }
