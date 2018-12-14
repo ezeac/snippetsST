@@ -139,7 +139,7 @@ function pausarsonido() {
 }
 
 alias kudoscontroldeploy='echo "Deploy KudosControl (kcontrol)" && cd /home/ezequiel/git/kudos/kudoscontrol && ./node_modules/@angular/cli/bin/ng build --prod && rsync -ah google/. dist/kudoscontrol/google/ && rsync --progress --exclude "assets/backend/cuentas/config.php" -ahe ssh dist/kudoscontrol/. kudos@www.kudosestudio.com:/home/kudos/kcontrol/'
-alias resetlogs='find . -path "*.log" -exec sh -c '\''gzip -c "$0" > "$0_$(date -I).gz" && rm "$0"'\'' {} \;'
+alias logsreset='find . -path "*.log" -exec sh -c '\''gzip -c "$0" >> "$0_$(date -I).gz" && rm "$0"'\'' {} \;'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -147,10 +147,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 #ssh tiendalibero
-alias sshtiendaliberoprod='echo "ssh tiendalibero prod" && ssh -p 20747 kudos@ssh-virginia-28.mojostratus.io'
-alias sshtiendaliberostg='echo "ssh tiendalibero stg" && ssh -p 20880 kudo@ssh-virginia-29.mojostratus.io'
-alias sshtiendaliberoprodold="echo 'ssh tiendalibero prod old' && echo 'pass TiendaLINODE!1234!' && ssh root@45.79.218.74"
-alias sshtiendaliberoprodkudos2='echo "ssh tiendalibero prod new" && ssh tiendalibero@199.189.227.76'
+alias sshtiendaliberostratus'echo "ssh tiendalibero prod" && ssh -p 20747 kudos@ssh-virginia-28.mojostratus.io'
+alias sshtiendaliberoold="echo 'ssh tiendalibero prod old' && echo 'pass TiendaLINODE!1234!' && ssh root@45.79.218.74"
+alias sshtiendalibero='echo "ssh tiendalibero prod new" && ssh tiendalibero@199.189.227.76'
 #ssh kudos
 alias sshkudos='echo "ssh kudos" && ssh kudos@162.252.106.81'
 alias sshkudos2='echo "ssh kudos 2" && ssh kudos2@199.189.227.76'
@@ -166,4 +165,8 @@ alias sshpigmentostaging='echo "ssh pigmento staging" && ssh -i ~/pigmento_key_s
 #ssh modax
 alias sshmodaxprod='echo "ssh modax prod" && echo "pass: M4g3nt02017" && ssh root@modax.com.ar'
 alias sshmodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && ssh root@magtest.modax.com.ar'
+#ssh tiendalosangeles
+alias sshtiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
+#ssh tucamara
+alias sshtucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
 
