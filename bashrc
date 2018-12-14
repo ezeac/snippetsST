@@ -147,7 +147,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 #ssh tiendalibero
-alias sshtiendaliberostratus'echo "ssh tiendalibero prod" && ssh -p 20747 kudos@ssh-virginia-28.mojostratus.io'
+alias sshtiendaliberostratus='echo "ssh tiendalibero prod" && ssh -p 20747 kudos@ssh-virginia-28.mojostratus.io'
 alias sshtiendaliberoold="echo 'ssh tiendalibero prod old' && echo 'pass TiendaLINODE!1234!' && ssh root@45.79.218.74"
 alias sshtiendalibero='echo "ssh tiendalibero prod new" && ssh tiendalibero@199.189.227.76'
 #ssh kudos
