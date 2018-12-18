@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+DELETE FROM customer_visitor WHERE last_visit_at < DATE_SUB(NOW(), INTERVAL 3 DAY);
+DELETE FROM report_event WHERE logged_at < DATE_SUB(NOW(), INTERVAL 3 DAY);
+DELETE FROM report_viewed_product_index WHERE added_at < DATE_SUB(NOW(), INTERVAL 3 DAY);
+OPTIMIZE TABLE customer_visitor;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>table_migration_magento</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
