@@ -1,6 +1,7 @@
 <snippet>
 	<content><![CDATA[
-<img src="<?php echo Mage::getBaseUrl('media') ?>wysiwyg/${1:nombreDeImagen.png}" alt="" />${2:<img src="\{\{media url="wysiwyg/${1:nombreDeImagen.png}"\}\}" alt="" />}
+Magento1: <img src="<?php echo Mage::getBaseUrl('media') ?>wysiwyg/${1:nombreDeImagen.png}" alt="" />${2:<img src="\{\{media url="wysiwyg/${1:nombreDeImagen.png}"\}\}" alt="" />}
+Magento2: \$block->getViewFileUrl('images/logo_kudos.png')
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mediaCall</tabTrigger>
