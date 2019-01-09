@@ -176,5 +176,7 @@ alias sshmodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && s
 alias sshtiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
 #ssh tucamara
 alias sshtucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
+#ssh parz
+alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
 
 
