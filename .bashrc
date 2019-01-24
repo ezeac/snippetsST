@@ -178,5 +178,7 @@ alias sshtiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangelesku
 alias sshtucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
 #ssh parz
 alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
-
-
+#ssh fiorani
+alias sshfiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
+#ssh nuevo kudos
+alias sshnuevokudos='echo ssh nuevo kudos && kudos@74.222.3.71'
