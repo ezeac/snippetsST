@@ -181,4 +181,4 @@ alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute
 #ssh fiorani
 alias sshfiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
 #ssh nuevo kudos
-alias sshkudos_nuevoservidor='echo ssh nuevo kudos && kudos@74.222.3.71'
+alias sshkudos_nuevoservidor='echo "ssh nuevo servidor kudos" && ssh kudos@74.222.3.71'
