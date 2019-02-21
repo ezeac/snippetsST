@@ -153,32 +153,44 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:/opt/mssql-tools/bin"
 
+
+#SSH MAGEMOJO VIEJOS
 #ssh tiendalibero
 alias sshtiendaliberostratus='echo "ssh tiendalibero prod" && ssh -p 20747 kudos@ssh-virginia-28.mojostratus.io'
 alias sshtiendaliberoold="echo 'ssh tiendalibero prod old' && echo 'pass TiendaLINODE!1234!' && ssh root@45.79.218.74"
-alias sshtiendalibero='echo "ssh tiendalibero prod new" && ssh tiendalibero@199.189.227.76'
+alias sshmojotiendalibero='echo "ssh tiendalibero prod new" && ssh tiendalibero@199.189.227.76'
 #ssh kudos
-alias sshkudos='echo "ssh kudos" && ssh kudos@162.252.106.81'
-alias sshkudos2='echo "ssh kudos 2" && ssh kudos2@199.189.227.76'
+alias sshmojokudos='echo "ssh kudos" && ssh kudos@162.252.106.81'
+alias sshmojokudos2='echo "ssh kudos 2" && ssh kudos2@199.189.227.76'
 #ssh raceparts
-alias sshraceparts='echo ssh raceparts && ssh raceparts@raceparts.com.ar'
+alias sshmojoraceparts='echo ssh raceparts && ssh raceparts@raceparts.com.ar'
 #ssh casavargas
-alias sshcasavargas='echo ssh casavargas && ssh casavar@casavargas.com.ar'
+alias sshmojocasavargas='echo ssh casavargas && ssh casavar@casavargas.com.ar'
 #ssh nhautopiezas
-alias sshnhautopiezas='echo "ssh nhautopiezas" && ssh nhautopiezas@nhautopiezas.com.ar'
+alias sshmojonhautopiezas='echo "ssh nhautopiezas" && ssh nhautopiezas@nhautopiezas.com.ar'
 #ssh pigmento
-alias sshpigmentoprod='echo "ssh pigmento prod" && ssh -i ~/pigmento_key_prod.pem ubuntu@34.195.204.232'
-alias sshpigmentostaging='echo "ssh pigmento staging" && ssh -i ~/pigmento_key_staging.pem ubuntu@52.202.123.212'
+alias sshmojopigmentoprod='echo "ssh pigmento prod" && ssh -i ~/pigmento_key_prod.pem ubuntu@34.195.204.232'
+alias sshmojopigmentostaging='echo "ssh pigmento staging" && ssh -i ~/pigmento_key_staging.pem ubuntu@52.202.123.212'
 #ssh modax
-alias sshmodaxprod='echo "ssh modax prod" && echo "pass: M4g3nt02017" && ssh root@modax.com.ar'
-alias sshmodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && ssh root@magtest.modax.com.ar'
+alias sshmojomodaxprod='echo "ssh modax prod" && echo "pass: M4g3nt02017" && ssh root@modax.com.ar'
+alias sshmojomodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && ssh root@magtest.modax.com.ar'
 #ssh tiendalosangeles
-alias sshtiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
+alias sshmojotiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
 #ssh tucamara
-alias sshtucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
+alias sshmojotucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
 #ssh parz
-alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
+alias sshmojoparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
 #ssh fiorani
-alias sshfiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
-#ssh nuevo kudos
-alias sshkudos_nuevoservidor='echo "ssh nuevo servidor kudos" && ssh kudos@74.222.3.71'
+alias sshmojofiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
+
+#SSH NUEVO SERVER KUDOS
+#ssh kimuan
+alias sshkimuan='echo "ssh nuevo servidor kudos kimuan" && ssh kudos@74.222.3.77'
+#ssh tiendalibero
+alias sshtiendalibero='echo "ssh nuevo servidor kudos tiendalibero" && ssh kudos@74.222.3.72'
+#ssh casavargas
+alias sshcasavargas='echo "ssh nuevo servidor kudos kimuan" && ssh kudos@74.222.3.73'
+#ssh castagno
+alias sshcastagno='echo "ssh nuevo servidor kudos kimuan" && ssh kudos@74.222.3.74'
+
+
