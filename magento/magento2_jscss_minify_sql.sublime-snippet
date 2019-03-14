@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+UPDATE `core_config_data` SET `value`='1' WHERE `path`='dev/js/merge_files';
+UPDATE `core_config_data` SET `value`='1' WHERE `path`='dev/js/enable_js_bundling';
+UPDATE `core_config_data` SET `value`='1' WHERE `path`='dev/js/minify_files';
+UPDATE `core_config_data` SET `value`='1' WHERE `path`='dev/css/merge_css_files';
+UPDATE `core_config_data` SET `value`='1' WHERE `path`='dev/css/minify_files';
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>table_migration_magento</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
