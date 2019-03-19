@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+php bin/magento admin:user:create --admin-user="develop1" --admin-password="Developers2017" --admin-email="admin@example.com" --admin-firstname="Admin" --admin-lastname="Admin"
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>magento2_create_user</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
