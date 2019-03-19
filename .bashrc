@@ -148,6 +148,15 @@ alias updatenode='curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 alias kudoscontroldeploy='echo "Deploy KudosControl (kcontrol)" && cd /home/ezequiel/git/kudos/kudoscontrol && ./node_modules/@angular/cli/bin/ng build --prod && rsync -ah google/. dist/kudoscontrol/google/ && rsync --progress --exclude "assets/backend/cuentas/config.php" -ahe ssh dist/kudoscontrol/. kudos@www.kudosestudio.com:/home/kudos/kcontrol/'
 alias logsreset='find . -path "*.log" -exec sh -c '\''gzip -c "$0" >> "$0_$(date -I).gz" && rm "$0"'\'' {} \;'
 
+alias vimfix='echo '\''syntax on
+colorscheme desert
+set mouse-=ah
+set nu'\'' > ~/.vimrc && 
+sudo bash -c '\''echo "syntax on
+colorscheme desert
+set mouse-=ah
+set nu" > /root/.vimrc'\'''
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
