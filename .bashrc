@@ -164,54 +164,38 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 
 #SSH NUEVO SERVER KUDOS
 #ssh kudos
-alias sshkudos='echo "ssh kudos prod" && ssh kudos@74.222.3.70'
+alias sshkudos='echo "ssh kudos prod" && ssh kudos@74.222.3.70 -p32241'
 #ssh tiendalibero
-alias sshtiendalibero='echo "ssh tiendalibero prod" && ssh kudos@74.222.3.72'
-alias sshtiendaliberostg='echo "ssh tiendalibero stg" && ssh kudos@74.222.3.233'
+alias sshtiendalibero='echo "ssh tiendalibero prod" && ssh kudos@74.222.3.72 -p32241'
+alias sshtiendaliberostg='echo "ssh tiendalibero stg" && ssh kudos@74.222.3.233 -p32241'
 #ssh casavargas
-alias sshcasavargas='echo "ssh casavargas prod" && ssh kudos@74.222.3.73'
+alias sshcasavargas='echo "ssh casavargas prod" && ssh kudos@74.222.3.73 -p32241'
 #ssh castagno
-alias sshcastagno='echo "ssh castagno prod" && ssh kudos@74.222.3.75'
+alias sshcastagno='echo "ssh castagno prod" && ssh kudos@74.222.3.75 -p32241'
 #ssh kimuan
-alias sshkimuan='echo "ssh kimuan prod" && ssh kudos@74.222.3.77'
+alias sshkimuan='echo "ssh kimuan prod" && ssh kudos@74.222.3.77 -p32241'
 #ssh puertosale
-alias sshpuertosale='echo "ssh puertosale prod" && ssh kudos@74.222.3.80'
+alias sshpuertosale='echo "ssh puertosale prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh blumimax
-alias sshblumimax='echo "ssh blumimax prod" && ssh kudos@74.222.3.80'
+alias sshblumimax='echo "ssh blumimax prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh temuco
-alias sshtemuco='echo "ssh temuco prod" && ssh kudos@74.222.3.80'
+alias sshtemuco='echo "ssh temuco prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh servimaq
-alias sshservimaq='echo "ssh servimaq prod" && ssh kudos@74.222.3.80'
+alias sshservimaq='echo "ssh servimaq prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh casamanrique
-alias sshcasamanrique='echo "ssh casamanrique prod" && ssh kudos@74.222.3.80'
+alias sshcasamanrique='echo "ssh casamanrique prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh labaliza
-alias sshlabaliza='echo "ssh labaliza prod" && ssh kudos@74.222.3.80'
+alias sshlabaliza='echo "ssh labaliza prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh nhautopiezas
-alias sshnhautopiezas='echo "ssh nhautopiezas prod" && ssh kudos@74.222.3.74'
+alias sshnhautopiezas='echo "ssh nhautopiezas prod" && ssh kudos@74.222.3.74 -p32241'
 #ssh elauditor
-alias sshelauditor='echo "ssh elauditor prod" && ssh kudos@74.222.3.76'
+alias sshelauditor='echo "ssh elauditor prod" && ssh kudos@74.222.3.76 -p32241'
 #ssh biosalud
-alias sshbiosalud='echo "ssh biosalud prod" && ssh kudos@74.222.3.78'
+alias sshbiosalud='echo "ssh biosalud prod" && ssh kudos@74.222.3.78 -p32241'
 #ssh raceparts
-alias sshraceparts='echo "ssh raceparts prod" && ssh kudos@74.222.3.79'
+alias sshraceparts='echo "ssh raceparts prod" && ssh kudos@74.222.3.79 -p32241'
 #ssh nexand
-alias sshnexand='echo "ssh nexand prod" && ssh kudos@74.222.3.232'
+alias sshnexand='echo "ssh nexand prod" && ssh kudos@74.222.3.232 -p32241'
 #ssh parallel
-alias sshparallel='echo "ssh parallel prod" && ssh kudos@74.222.3.231'
-
-#OTROS SSH KUDOS
-#ssh pigmento
-alias sshpigmentoprod='echo "ssh pigmento prod" && ssh -i ~/pigmento_key_prod.pem ubuntu@34.195.204.232'
-alias sshpigmentostaging='echo "ssh pigmento staging" && ssh -i ~/pigmento_key_staging.pem ubuntu@52.202.123.212'
-#ssh modax
-alias sshmodaxprod='echo "ssh modax prod" && echo "pass: M4g3nt02017" && ssh root@modax.com.ar'
-alias sshmodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && ssh root@magtest.modax.com.ar'
-#ssh parz
-alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
-#ssh fiorani
-alias sshmojofiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
-#ssh tucamara
-alias sshmojotucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
-#ssh tiendalosangeles
-alias sshmojotiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
+alias sshparallel='echo "ssh parallel prod" && ssh kudos@74.222.3.231 -p32241'
 
