@@ -117,6 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 
+
+
+
 function lazygit() {
 	if [ -z $2 ]
 	then
@@ -138,8 +141,21 @@ function pausarsonido() {
 	fi
 }
 
+
+alias updatenode='curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -'
+
+
 alias kudoscontroldeploy='echo "Deploy KudosControl (kcontrol)" && cd /home/ezequiel/git/kudos/kudoscontrol && ./node_modules/@angular/cli/bin/ng build --prod && rsync -ah google/. dist/kudoscontrol/google/ && rsync --progress --exclude "assets/backend/cuentas/config.php" -ahe ssh dist/kudoscontrol/. kudos@www.kudosestudio.com:/home/kudos/kcontrol/'
 alias logsreset='find . -path "*.log" -exec sh -c '\''gzip -c "$0" >> "$0_$(date -I).gz" && rm "$0"'\'' {} \;'
+
+alias vimfix='echo '\''syntax on
+colorscheme desert
+set mouse-=ah
+set nu'\'' > ~/.vimrc && 
+sudo bash -c '\''echo "syntax on
+colorscheme desert
+set mouse-=ah
+set nu" > /root/.vimrc'\'''
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -148,39 +164,40 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 
 #SSH NUEVO SERVER KUDOS
 #ssh kudos
-alias sshkudos='echo "ssh kudos prod" && ssh kudos@74.222.3.70'
+alias sshkudos='echo "ssh kudos prod" && ssh kudos@74.222.3.70 -p32241'
 #ssh tiendalibero
-alias sshtiendalibero='echo "ssh tiendalibero prod" && ssh kudos@74.222.3.72'
+alias sshtiendalibero='echo "ssh tiendalibero prod" && ssh kudos@74.222.3.72 -p32241'
+alias sshtiendaliberostg='echo "ssh tiendalibero stg" && ssh kudos@74.222.3.233 -p32241'
 #ssh casavargas
-alias sshcasavargas='echo "ssh casavargas prod" && ssh kudos@74.222.3.73'
+alias sshcasavargas='echo "ssh casavargas prod" && ssh kudos@74.222.3.73 -p32241'
 #ssh castagno
-alias sshcastagno='echo "ssh castagno prod" && ssh kudos@74.222.3.75'
+alias sshcastagno='echo "ssh castagno prod" && ssh kudos@74.222.3.75 -p32241'
 #ssh kimuan
-alias sshkimuan='echo "ssh kimuan prod" && ssh kudos@74.222.3.77'
+alias sshkimuan='echo "ssh kimuan prod" && ssh kudos@74.222.3.77 -p32241'
 #ssh puertosale
-alias sshpuertosale='echo "ssh puertosale prod" && ssh kudos@74.222.3.80'
+alias sshpuertosale='echo "ssh puertosale prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh blumimax
-alias sshblumimax='echo "ssh blumimax prod" && ssh kudos@74.222.3.80'
+alias sshblumimax='echo "ssh blumimax prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh temuco
-alias sshtemuco='echo "ssh temuco prod" && ssh kudos@74.222.3.80'
+alias sshtemuco='echo "ssh temuco prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh servimaq
-alias sshservimaq='echo "ssh servimaq prod" && ssh kudos@74.222.3.80'
+alias sshservimaq='echo "ssh servimaq prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh casamanrique
-alias sshcasamanrique='echo "ssh casamanrique prod" && ssh kudos@74.222.3.80'
+alias sshcasamanrique='echo "ssh casamanrique prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh labaliza
-alias sshlabaliza='echo "ssh labaliza prod" && ssh kudos@74.222.3.80'
+alias sshlabaliza='echo "ssh labaliza prod" && ssh kudos@74.222.3.80 -p32241'
 #ssh nhautopiezas
-alias sshnhautopiezas='echo "ssh nhautopiezas prod" && ssh kudos@74.222.3.74'
+alias sshnhautopiezas='echo "ssh nhautopiezas prod" && ssh kudos@74.222.3.74 -p32241'
 #ssh elauditor
-alias sshelauditor='echo "ssh elauditor prod" && ssh kudos@74.222.3.76'
+alias sshelauditor='echo "ssh elauditor prod" && ssh kudos@74.222.3.76 -p32241'
 #ssh biosalud
-alias sshbiosalud='echo "ssh biosalud prod" && ssh kudos@74.222.3.78'
+alias sshbiosalud='echo "ssh biosalud prod" && ssh kudos@74.222.3.78 -p32241'
 #ssh raceparts
-alias sshraceparts='echo "ssh raceparts prod" && ssh kudos@74.222.3.79'
+alias sshraceparts='echo "ssh raceparts prod" && ssh kudos@74.222.3.79 -p32241'
 #ssh nexand
-alias sshnexand='echo "ssh nexand prod" && ssh kudos@74.222.3.232'
+alias sshnexand='echo "ssh nexand prod" && ssh kudos@74.222.3.232 -p32241'
 #ssh parallel
-alias sshparallel='echo "ssh parallel prod" && ssh kudos@74.222.3.231'
+alias sshparallel='echo "ssh parallel prod" && ssh kudos@74.222.3.231 -p32241'
 
 #OTROS SSH KUDOS
 #ssh pigmento
@@ -191,11 +208,12 @@ alias sshmodaxprod='echo "ssh modax prod" && echo "pass: M4g3nt02017" && ssh roo
 alias sshmodaxstaging='echo "ssh modax staging" && echo "pass: M4g3nt02017" && ssh root@magtest.modax.com.ar'
 #ssh parz
 alias sshparz='echo "ssh parz" && ssh centos@ec2-18-224-117-22.us-east-2.compute.amazonaws.com -i ~/key-parz'
+alias sshparzpwa='echo "ssh parzpwa" && ssh centos@ec2-18-217-43-20.us-east-2.compute.amazonaws.com -i ~/key-parz'
 #ssh fiorani
-alias sshmojofiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
+alias sshfiorani='echo "ssh fiorani" && ssh fiorani@fiorani.com.ar'
 #ssh tucamara
-alias sshmojotucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
+alias sshtucamaraprod='echo "ssh tucamara prod" && ssh -i ~/tucamara.ppk tucamara@m76.siteground.biz -p18765'
 #ssh tiendalosangeles
-alias sshmojotiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
-
+alias sshtiendalosangeles='echo "ssh tiendalosangeles" && ssh tiendalosangeleskudos@tiendalosangeles.com.ar'
+alias sshtiendalosangelesroot='echo "ssh tiendalosangeles, pass: L7878..!!h" && ssh tiendala@tiendalosangeles.com.ar'
 
