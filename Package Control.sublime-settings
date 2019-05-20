@@ -7,16 +7,7 @@
 	[
 		"CSS Format",
 		"Emmet",
-		"HTML-CSS-JS Prettify",
-		"HTMLBeautify",
-		"Indent XML",
-		"LESS",
-		"Package Control",
-		"PackageResourceViewer",
-		"Pretty JSON",
-		"Twig",
-		"TypeScript",
-		"Vue Syntax Highlight",
-		"Vuejs Complete Package"
+		"JSON Reindent",
+		"Package Control"
 	]
 }

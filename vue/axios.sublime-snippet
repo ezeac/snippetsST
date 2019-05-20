@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[
+        let url = this.\$store.state.config.mage_endpoint.base_magento_url + '/chart/index'
+        axios({
+        method: 'GET',
+        'url': url,
+        'params': {
+          'prodId': this.product.parent_id
+        }
+        }).then(
+        result => {
+          result.data.result[0].image = this.\$store.state.config.mage_endpoint.base_magento_url + '/media/chart/image' + result.data.result[0].image
+          this.size = result.data.result['0']
+          console.log(result.data.result)
+        },
+        error => {
+          console.log(error)
+        }
+        )
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>vue_axios</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

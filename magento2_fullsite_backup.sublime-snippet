@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mysqldump --quick --single-transaction --lock-tables=false -u magento -p${1:BBDD_password} ${2:BBDD_name} | gzip -9 > bbdd_backup_\$(date -I).sql.gz && zip --exclude "*cache/*" --exclude "*.git/*" --exclude "*var/log/*" --exclude "*import/*" --exclude "*generated/*" --exclude "*pub/static/*" -ru ../fullsite_backup_\$(date -I).zip . && rm bbdd_backup_\$(date -I).sql.gz
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>magento2_fullsite_backup</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
